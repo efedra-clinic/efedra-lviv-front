@@ -15,9 +15,9 @@ const SITE_URL =
     : 'http://localhost:3000');
 
 export const metadata: Metadata = getDefaultMetadata({
-  title: 'Блог | Efedra Clinic - Статті про стоматологію та естетичну медицину',
+  title: 'Блог | Efedra Center - Статті про естетичну медицину',
   description:
-    'Корисні статті та новини про стоматологію та естетичну медицину від професіоналів Efedra Clinic',
+    'Корисні статті та новини про естетичну медицину від професіоналів Efedra Center',
   url: `${SITE_URL}/blog`,
 });
 

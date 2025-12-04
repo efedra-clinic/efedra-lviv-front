@@ -40,7 +40,7 @@ export async function generateMetadata({
 
   const articleUrl = `${SITE_URL}/blog/${article}`;
   const articleTitle = currentPost.title
-    ? `${currentPost.title} | Efedra Clinic`
+    ? `${currentPost.title} | Efedra Center`
     : undefined;
 
   return getDefaultMetadata({
@@ -48,7 +48,7 @@ export async function generateMetadata({
     description: currentPost.description,
     url: articleUrl,
     image: articleImage,
-    imageAlt: currentPost.title || 'Efedra Clinic',
+    imageAlt: currentPost.title || 'Efedra Center',
     type: 'article',
     publishedTime: currentPost.createdAt,
   });

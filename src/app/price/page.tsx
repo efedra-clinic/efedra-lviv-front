@@ -17,9 +17,9 @@ const SITE_URL =
 
 export const metadata: Metadata = getDefaultMetadata({
   title:
-    'Прайс-лист | Efedra Clinic - Ціни на послуги стоматології та естетичної медицини',
+    'Прайс-лист | Efedra Center - Ціни на послуги естетичної медицини',
   description:
-    'Актуальні ціни на послуги стоматології та естетичної медицини в клініці Efedra Clinic',
+    'Актуальні ціни на послуги естетичної медицини в центрі Efedra Center',
   url: `${SITE_URL}/price`,
 });
 
