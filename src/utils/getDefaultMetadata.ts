@@ -20,13 +20,13 @@ interface MetadataOverrides {
 export function getDefaultMetadata(overrides?: MetadataOverrides): Metadata {
   const title =
     overrides?.title ||
-    'Efedra Clinic - клініка стоматології та естетичної медицини в Одесі';
+    'Efedra Center - Центр естетичної медицини у м. Південне';
   const description =
     overrides?.description ||
     'Сучасні методики, професійні лікарі та турбота про вашу красу й здоровʼя';
   const url = overrides?.url || SITE_URL;
   const ogImage = overrides?.image || `${SITE_URL}/opengraph-image.jpg`;
-  const imageAlt = overrides?.imageAlt || 'Efedra Clinic';
+  const imageAlt = overrides?.imageAlt || 'Efedra Center';
 
   const baseMetadata: Metadata = {
     title,
@@ -34,7 +34,7 @@ export function getDefaultMetadata(overrides?: MetadataOverrides): Metadata {
     openGraph: {
       title:
         overrides?.title ||
-        'Клініка стоматології та естетичної медицини Efedra Clinic в Одесі',
+        'Центр естетичної медицини Efedra Center у м. Південне',
       description,
       url,
       images: [
@@ -47,7 +47,7 @@ export function getDefaultMetadata(overrides?: MetadataOverrides): Metadata {
       ],
       type: overrides?.type || 'website',
       locale: 'uk_UA',
-      siteName: 'Efedra Clinic',
+      siteName: 'Efedra Center',
     },
     twitter: {
       card: 'summary_large_image',

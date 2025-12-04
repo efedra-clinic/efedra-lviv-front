@@ -26,7 +26,7 @@ export default function DirectionTag({
         width="11"
         height="11"
       />
-      <p>{direction === "aesthetic" ? "Естетична медицина" : "Стоматологія"}</p>
+      <p>Естетична медицина</p>
     </div>
   );
 }
