@@ -24,4 +24,4 @@ export const LICENSE_INFO = {
   value: 'від 01.02.2021 №317/21/М',
 };
 
-export const SCHEDULE = 'Пн-Нд: 09:00 - 20:00';
+export const SCHEDULE = 'Пн-Пт: 08:00 - 22:00';

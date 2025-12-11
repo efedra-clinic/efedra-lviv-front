@@ -6,12 +6,6 @@ const BOT_ID = process.env.TELEGRAM_BOT_ID || "";
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 export async function POST(request: NextRequest) {
-  if (!BOT_ID || !CHAT_ID) {
-    return NextResponse.json(
-      { error: "Bot ID or Chat ID is not set. Please check your environment variables." },
-      { status: 500 }
-    );
-  }
   if (request.method === "POST") {
     try {
       const data = await request.json();
