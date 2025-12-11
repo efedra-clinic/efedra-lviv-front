@@ -16,7 +16,7 @@
     "formik": "^2.4.6",
     "lottie-react": "^2.4.1",
     "motion": "^12.23.12",
-    "next": "15.5.2",
+    "next": "15.5.7",
     "next-sanity": "^10.0.16",
     "next-sitemap": "^4.2.3",
     "react": "19.1.0",
