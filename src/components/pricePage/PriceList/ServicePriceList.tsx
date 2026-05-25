@@ -33,6 +33,27 @@ export default function ServicePriceList({
   const currencyAnalysis = analyzeCurrencyDistribution(services);
   const showCurrencyInHeader = currencyAnalysis.shouldShowCurrencyInHeader;
 
+  const formatDisplayPrice = (
+    normalized: { value: string; currency: 'UAH' | 'USD' | 'EUR' | 'UNKNOWN' },
+    showUahCurrencyInline: boolean
+  ) => {
+    const price = normalized.value;
+
+    if (normalized.currency === 'USD') {
+      return `$${price}`;
+    }
+
+    if (normalized.currency === 'EUR') {
+      return `${price} €`;
+    }
+
+    if (normalized.currency === 'UAH') {
+      return showUahCurrencyInline ? `${price} грн` : price;
+    }
+
+    return price;
+  };
+
   return (
     <>
       <div
@@ -64,24 +85,7 @@ export default function ServicePriceList({
             let displayPrice: string | null = null;
 
             if (normalized) {
-              let price = normalized.value;
-              if (showCurrencyInHeader && normalized.currency === 'UAH') {
-                price = price.replace(/\s*\bгрн\b\s*(?![\\\/])/gi, ' ').trim();
-                price = price.replace(/\s+/g, ' ').trim();
-              }
-
-              if (normalized.currency === 'USD') {
-                displayPrice = `$${price}`;
-              } else if (normalized.currency === 'EUR') {
-                displayPrice = `${price} €`;
-              } else if (
-                normalized.currency === 'UAH' &&
-                !showCurrencyInHeader
-              ) {
-                displayPrice = `${price} грн`;
-              } else {
-                displayPrice = price;
-              }
+              displayPrice = formatDisplayPrice(normalized, !showCurrencyInHeader);
             }
 
             return (
@@ -129,25 +133,7 @@ export default function ServicePriceList({
             let displayPrice: string | null = null;
 
             if (normalized) {
-              let price = normalized.value;
-
-              if (showCurrencyInHeader && normalized.currency === 'UAH') {
-                price = price.replace(/\s*\bгрн\b\s*(?![\\\/])/gi, ' ').trim();
-                price = price.replace(/\s+/g, ' ').trim();
-              }
-
-              if (normalized.currency === 'USD') {
-                displayPrice = `$${price}`;
-              } else if (normalized.currency === 'EUR') {
-                displayPrice = `${price} €`;
-              } else if (
-                normalized.currency === 'UAH' &&
-                !showCurrencyInHeader
-              ) {
-                displayPrice = `${price} грн`;
-              } else {
-                displayPrice = price;
-              }
+              displayPrice = formatDisplayPrice(normalized, true);
             }
 
             return (
