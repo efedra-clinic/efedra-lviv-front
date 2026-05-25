@@ -45,18 +45,19 @@ export function normalizePrice(price: string): NormalizedPrice {
   );
 
   normalized = normalized.replace(
-    /\b(грн|uah|UAH)(?![\\\/])\s*([\d\s]+)/gi,
+    /(грн|uah|UAH)(?![\\\/])\s*([\d\s]+)/gi,
     '$2'
   );
 
-  normalized = normalized.replace(/\b(грн|uah|UAH)(?![\\\/])\b/gi, '');
+  normalized = normalized.replace(/\s*(грн|uah|UAH)(?![\\\/])(?=\s|$)/gi, '');
 
   normalized = normalized.replace(/\s+/g, ' ').trim();
+  normalized = normalized.replace(/(^|\s)(від)\s*(\d)/giu, '$1$2 $3');
 
   normalized = normalized.replace(
     /(\d+(?:\s+\d+)*)\s*-\s*(\d+(?:\s+\d+)*)/g,
     (match, p1, p2) => {
-      return `${formatNumber(p1)}-${formatNumber(p2)}`;
+      return `${formatNumber(p1)} - ${formatNumber(p2)}`;
     }
   );
 
